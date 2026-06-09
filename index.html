@@ -1,5 +1,5 @@
-<h2 class="sr-only">Pipe commercial T8I — matrice, funnel, pipe par marque</h2>
-<link rel="icon" type="image/png" href="favicon.png">
+<h2 class="sr-only">T8I commercial pipe — matrix, funnel, pipe by brand</h2>
+
 <style>
 .t8i-wrap { font-family: var(--font-sans); color: var(--color-text-primary); }
 .t8i-upload { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
@@ -50,7 +50,7 @@
 .t8i-search { padding: 6px 10px; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); font-size: 12px; font-family: inherit; background: var(--color-background-primary); color: var(--color-text-primary); width: 200px; }
 .t8i-controls { display: flex; gap: 12px; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
 
-/* ====== Synthèse Board ====== */
+/* ====== Synthesis Board ====== */
 .brd-wrap { background: #FBF8F1; border-radius: var(--border-radius-lg); padding: 28px; margin-top: 4px; }
 .brd-head { display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 16px; border-bottom: 2px solid #1D6A4E; margin-bottom: 22px; gap: 20px; flex-wrap: wrap; }
 .brd-title { font-size: 28px; font-weight: 700; color: #1D6A4E; letter-spacing: -0.01em; margin: 0; }
@@ -166,14 +166,14 @@
 <div class="t8i-wrap">
   <div class="t8i-upload">
     <div class="t8i-upload-row">
-      <label class="btn" for="xlsx-input">Charger un fichier Excel</label>
+      <label class="btn" for="xlsx-input">Load Excel file</label>
       <input type="file" id="xlsx-input" accept=".xlsx,.xlsm,.xls">
-      <div class="info" id="upload-info">Données initiales chargées (v6)</div>
+      <div class="info" id="upload-info">Initial data loaded (v6)</div>
       <div class="t8i-toggle">
-        <button id="metric-forecast" class="active">CA Forecast</button>
+        <button id="metric-forecast" class="active">Revenue Forecast</button>
         <button id="metric-order">Order Amount</button>
       </div>
-      <button class="reset-btn" id="reset-btn">Recharger initial</button>
+      <button class="reset-btn" id="reset-btn">Reload initial</button>
       <button class="diag-btn" id="diag-btn">Diagnostic</button>
     </div>
     <div class="t8i-error" id="upload-err"></div>
@@ -182,25 +182,25 @@
   </div>
 
   <div class="t8i-cards">
-    <div class="t8i-card"><p class="lbl">Marques uniques</p><p class="val" id="kpi-clients">—</p><p class="sub" id="kpi-clients-sub">— actives</p></div>
-    <div class="t8i-card"><p class="lbl">Deals actifs</p><p class="val" id="kpi-deals">—</p><p class="sub">hors Contacted &amp; Stand by</p></div>
-    <div class="t8i-card"><p class="lbl" id="kpi-amount-lbl">CA Forecast €</p><p class="val" id="kpi-amount">—</p><p class="sub" id="kpi-amount-sub">Order Amount : —</p></div>
+    <div class="t8i-card"><p class="lbl">Unique brands</p><p class="val" id="kpi-clients">—</p><p class="sub" id="kpi-clients-sub">— active</p></div>
+    <div class="t8i-card"><p class="lbl">Active deals</p><p class="val" id="kpi-deals">—</p><p class="sub">excl. Contacted &amp; Stand by</p></div>
+    <div class="t8i-card"><p class="lbl" id="kpi-amount-lbl">Revenue Forecast €</p><p class="val" id="kpi-amount">—</p><p class="sub" id="kpi-amount-sub">Order Amount: —</p></div>
     <div class="t8i-card"><p class="lbl">Volume t</p><p class="val" id="kpi-volume">—</p></div>
   </div>
 
   <div class="t8i-tabs">
-    <button class="t8i-tab active" data-pane="board">Synthèse Board</button>
-    <button class="t8i-tab" data-pane="matrix">Matrice statut × produit</button>
-    <button class="t8i-tab" data-pane="funnel">Funnel par produit</button>
-    <button class="t8i-tab" data-pane="brands">Pipe par marque</button>
+    <button class="t8i-tab active" data-pane="board">Synthesis Board</button>
+    <button class="t8i-tab" data-pane="matrix">Status × product matrix</button>
+    <button class="t8i-tab" data-pane="funnel">Funnel by product</button>
+    <button class="t8i-tab" data-pane="brands">Pipe by brand</button>
   </div>
 
   <div class="t8i-pane active" id="pane-board">
     <div class="brd-wrap">
       <div class="brd-head">
-        <h1 class="brd-title">PIPE COMMERCIAL <span class="brd-year"></span></h1>
+        <h1 class="brd-title">COMMERCIAL PIPE <span class="brd-year"></span></h1>
         <div class="brd-meta">
-          THE 8 IMPACT · Synthèse Board<br>
+          THE 8 IMPACT · Synthesis Board<br>
           <span class="t8i-updated"></span>
           <button class="brd-pdf-btn" id="brd-pdf-btn" type="button">📄 Export PDF</button>
         </div>
@@ -210,23 +210,23 @@
 
       <div class="brd-grid">
         <div class="brd-card">
-          <h3 class="brd-card-title">Funnel · marques par étape × CA forecast</h3>
+          <h3 class="brd-card-title">Funnel · brands by stage × revenue forecast</h3>
           <div id="brd-funnel"></div>
         </div>
         <div class="brd-card">
-          <h3 class="brd-card-title">Top Deals · CA forecast</h3>
+          <h3 class="brd-card-title">Top Deals · revenue forecast</h3>
           <div id="brd-top"></div>
         </div>
       </div>
 
       <div class="brd-grid">
         <div class="brd-facts">
-          <h3 class="brd-facts-title">Faits marquants</h3>
+          <h3 class="brd-facts-title">Key highlights</h3>
           <div id="brd-facts-list"></div>
-          <button class="brd-facts-add" id="brd-fact-add-btn">+ Ajouter un fait</button>
+          <button class="brd-facts-add" id="brd-fact-add-btn">+ Add highlight</button>
         </div>
         <div class="brd-card">
-          <h3 class="brd-card-title">Répartition CA par produit</h3>
+          <h3 class="brd-card-title">Revenue by product</h3>
           <div id="brd-products"></div>
         </div>
       </div>
@@ -235,26 +235,26 @@
 
   <div class="t8i-pane" id="pane-matrix">
     <div class="t8i-updated-strip"><span class="t8i-updated"></span></div>
-    <p class="t8i-hint">Marques uniques par cellule. Une marque comptée 1 fois par cellule, même avec plusieurs deals.</p>
+    <p class="t8i-hint">Unique brands per cell. A brand is counted once per cell, even with multiple deals.</p>
     <table class="t8i-matrix" id="matrix-clients"></table>
-    <p class="t8i-section-title" id="matrix-amount-title">CA Forecast € par statut × produit</p>
+    <p class="t8i-section-title" id="matrix-amount-title">Revenue Forecast € by status × product</p>
     <table class="t8i-matrix" id="matrix-amount"></table>
   </div>
 
   <div class="t8i-pane" id="pane-funnel">
     <div class="t8i-updated-strip"><span class="t8i-updated"></span></div>
-    <p class="t8i-hint">Marques uniques par étape, ventilées par produit. Chaque segment = nb de marques pour ce produit dans cette étape.</p>
+    <p class="t8i-hint">Unique brands per stage, broken down by product. Each segment = number of brands for that product in that stage.</p>
     <div class="t8i-legend" id="legend"></div>
     <div class="t8i-funnel" id="funnel"></div>
-    <p class="t8i-section-title" id="funnel-amount-title">CA Forecast € par étape × produit</p>
+    <p class="t8i-section-title" id="funnel-amount-title">Revenue Forecast € by stage × product</p>
     <table class="t8i-matrix" id="funnel-amount"></table>
   </div>
 
   <div class="t8i-pane" id="pane-brands">
     <div class="t8i-updated-strip"><span class="t8i-updated"></span></div>
-    <p class="t8i-hint">Une ligne par marque. Colonne Deals exclut les statuts Contacted et Stand by. Trié par statut le plus avancé.</p>
+    <p class="t8i-hint">One row per brand. Deals column excludes Contacted and Stand by statuses. Sorted by most advanced status.</p>
     <div class="t8i-controls">
-      <input type="text" class="t8i-search" id="brand-search" placeholder="Rechercher une marque…">
+      <input type="text" class="t8i-search" id="brand-search" placeholder="Search for a brand…">
       <span style="font-size:12px; color:var(--color-text-secondary)" id="brand-count"></span>
     </div>
     <table class="t8i-matrix" id="brands-table"></table>
@@ -286,11 +286,11 @@ const INITIAL = [["Veja","Rollout under nego","Microniz8",7000,3,21000,21000],["
 
 let rows = INITIAL.map(r => ({client:r[0], status:r[1], product:r[2], unitPrice:+r[3]||0, volume:+r[4]||0, orderAmount:+r[5]||0, forecast:+r[6]||0}));
 let metricMode = "forecast";
-let lastDiag = "Aucun fichier chargé encore.";
+let lastDiag = "No file loaded yet.";
 let brandSort = {col: "rank", dir: "asc"};
 let brandSearch = "";
 
-const fmtEur = n => n === 0 ? "—" : "€" + Math.round(n).toLocaleString("fr-FR");
+const fmtEur = n => n === 0 ? "—" : "€" + Math.round(n).toLocaleString("en-GB");
 const fmtNum = n => n === 0 ? "—" : Math.round(n*10)/10;
 const norm = s => (s===null||s===undefined) ? "" : s.toString().trim();
 const productKey = p => norm(p) || "(non assigné)";
@@ -308,7 +308,7 @@ function findHeaderIndex(rows2D, target, maxRowsToScan) {
 
 function loadXlsx(file) {
   if (typeof XLSX === "undefined") {
-    document.getElementById("upload-err").textContent = "Bibliothèque Excel non chargée. Réessaye dans 2s.";
+    document.getElementById("upload-err").textContent = "Excel library not loaded. Retry in 2s.";
     return;
   }
   document.getElementById("upload-err").textContent = "";
@@ -322,19 +322,19 @@ function loadXlsx(file) {
       diag += "Onglets : " + wb.SheetNames.join(" | ") + "\n";
       let sheetName = wb.SheetNames.find(n => n.trim().toLowerCase() === "fct - revenue") || wb.SheetNames.find(n => n.toLowerCase().includes("revenue") || n.toLowerCase().includes("fct"));
       if (!sheetName) {
-        document.getElementById("upload-err").textContent = "Onglet 'FCT - Revenue' introuvable.";
-        diag += "ERREUR : aucun onglet ne correspond.\n";
+        document.getElementById("upload-err").textContent = "Sheet 'FCT - Revenue' not found.";
+        diag += "ERROR: no matching sheet.\n";
         lastDiag = diag; showDiag(); return;
       }
       diag += "Onglet utilisé : " + sheetName + "\n";
       const sheet = wb.Sheets[sheetName];
       const aoa = XLSX.utils.sheet_to_json(sheet, {header:1, raw:true, defval:""});
-      diag += "Lignes brutes : " + aoa.length + "\n";
+      diag += "Raw rows: " + aoa.length + "\n";
 
       const clientLoc = findHeaderIndex(aoa, "CLIENT", 20);
       if (!clientLoc) {
-        document.getElementById("upload-err").textContent = "Cellule 'CLIENT' introuvable.";
-        diag += "ERREUR : pas de cellule CLIENT.\n"; lastDiag = diag; showDiag(); return;
+        document.getElementById("upload-err").textContent = "Cell 'CLIENT' not found.";
+        diag += "ERROR: no CLIENT cell.\n"; lastDiag = diag; showDiag(); return;
       }
       const headerRow = clientLoc[0];
       diag += "Header CLIENT en ligne " + (headerRow+1) + "\n";
@@ -351,12 +351,12 @@ function loadXlsx(file) {
         else if (k === "order amount") idx.orderAmount = i;
       });
       const forecastLoc = findHeaderIndex(aoa.slice(headerRow, headerRow+3), "Forecast", 3);
-      if (forecastLoc) { idx.forecast = forecastLoc[1]; diag += "Header 'Forecast' colonne " + (forecastLoc[1]+1) + "\n"; }
-      else diag += "AVERTISSEMENT : header 'Forecast' introuvable. Fallback Order Amount.\n";
+      if (forecastLoc) { idx.forecast = forecastLoc[1]; diag += "Header 'Forecast' column " + (forecastLoc[1]+1) + "\n"; }
+      else diag += "WARNING: header 'Forecast' not found. Fallback to Order Amount.\n";
       diag += "Colonnes : " + JSON.stringify(idx) + "\n";
 
       if (idx.client === undefined) {
-        document.getElementById("upload-err").textContent = "Colonne CLIENT introuvable."; lastDiag = diag; showDiag(); return;
+        document.getElementById("upload-err").textContent = "CLIENT column not found."; lastDiag = diag; showDiag(); return;
       }
       let dataStart = headerRow + 1;
       if (aoa[dataStart] && norm(aoa[dataStart][idx.client]) === "") dataStart++;
@@ -384,17 +384,17 @@ function loadXlsx(file) {
         totOrder += orderAmount; totForecast += forecast; totVolume += volume;
         newRows.push({client, status, product, unitPrice, volume, orderAmount, forecast});
       }
-      diag += "Lignes lues : " + newRows.length + " (ignorées : " + skipped + ")\n";
-      diag += "Total Order Amount : €" + Math.round(totOrder).toLocaleString("fr-FR") + "\n";
-      diag += "Total Forecast : €" + Math.round(totForecast).toLocaleString("fr-FR") + "\n";
+      diag += "Rows read: " + newRows.length + " (skipped: " + skipped + ")\n";
+      diag += "Total Order Amount: €" + Math.round(totOrder).toLocaleString("en-GB") + "\n";
+      diag += "Total Forecast: €" + Math.round(totForecast).toLocaleString("en-GB") + "\n";
 
       if (newRows.length === 0) {
-        document.getElementById("upload-err").textContent = "Aucune ligne lue."; lastDiag = diag; showDiag(); return;
+        document.getElementById("upload-err").textContent = "No rows read."; lastDiag = diag; showDiag(); return;
       }
       rows = newRows;
       setUpdatedNow();
-      document.getElementById("upload-info").textContent = file.name + " — " + newRows.length + " lignes lues";
-      if (idx.forecast === undefined) document.getElementById("upload-warn").textContent = "Header 'Forecast' introuvable, fallback Order Amount.";
+      document.getElementById("upload-info").textContent = file.name + " — " + newRows.length + " rows read";
+      if (idx.forecast === undefined) document.getElementById("upload-warn").textContent = "Header 'Forecast' not found, fallback to Order Amount.";
       lastDiag = diag;
       renderAll();
     } catch (err) {
@@ -414,7 +414,7 @@ function renderKPIs() {
   const allClients = new Set(rows.map(r => norm(r.client)).filter(Boolean));
   const activeClients = new Set(rows.filter(isActive).map(r => norm(r.client)).filter(Boolean));
   document.getElementById("kpi-clients").textContent = allClients.size;
-  document.getElementById("kpi-clients-sub").textContent = activeClients.size + " actives";
+  document.getElementById("kpi-clients-sub").textContent = activeClients.size + " active";
 
   const activeRows = rows.filter(isActive);
   document.getElementById("kpi-deals").textContent = activeRows.length;
@@ -422,18 +422,18 @@ function renderKPIs() {
   const totFc = activeRows.reduce((s, r) => s + r.forecast, 0);
   const totOa = activeRows.reduce((s, r) => s + r.orderAmount, 0);
   if (metricMode === "forecast") {
-    document.getElementById("kpi-amount-lbl").textContent = "CA Forecast €";
+    document.getElementById("kpi-amount-lbl").textContent = "Revenue Forecast €";
     document.getElementById("kpi-amount").textContent = fmtEur(totFc);
-    document.getElementById("kpi-amount-sub").textContent = "Order Amount : " + fmtEur(totOa);
+    document.getElementById("kpi-amount-sub").textContent = "Order Amount: " + fmtEur(totOa);
   } else {
     document.getElementById("kpi-amount-lbl").textContent = "Order Amount €";
     document.getElementById("kpi-amount").textContent = fmtEur(totOa);
-    document.getElementById("kpi-amount-sub").textContent = "CA Forecast : " + fmtEur(totFc);
+    document.getElementById("kpi-amount-sub").textContent = "Revenue Forecast: " + fmtEur(totFc);
   }
   document.getElementById("kpi-volume").textContent = Math.round(activeRows.reduce((s, r) => s + r.volume, 0)*10)/10 + " t";
-  const titlePrefix = metricMode === "forecast" ? "CA Forecast" : "Order Amount";
-  document.getElementById("matrix-amount-title").textContent = titlePrefix + " € par statut × produit";
-  document.getElementById("funnel-amount-title").textContent = titlePrefix + " € par étape × produit";
+  const titlePrefix = metricMode === "forecast" ? "Revenue Forecast" : "Order Amount";
+  document.getElementById("matrix-amount-title").textContent = titlePrefix + " € by status × product";
+  document.getElementById("funnel-amount-title").textContent = titlePrefix + " € by stage × product";
 }
 
 function getProductList() {
@@ -542,7 +542,7 @@ function renderFunnel() {
     }
     html += '<div class="t8i-funnel-row"><div class="t8i-funnel-label">'+s+'</div><div class="t8i-funnel-bar-wrap">'+
       (total > 0 ? '<div class="t8i-funnel-stack" style="width:'+wPct+'%">'+segs+'</div>' : '<div class="t8i-funnel-empty"></div>')+
-      '<div class="t8i-funnel-meta">'+total+' marque'+(total>1?'s':'')+' · '+fmtEur(amtTotal)+'</div></div></div>';
+      '<div class="t8i-funnel-meta">'+total+' brand'+(total>1?'s':'')+' · '+fmtEur(amtTotal)+'</div></div></div>';
   });
   document.getElementById("funnel").innerHTML = html;
   let tbl = "<thead><tr><th>Statut</th>";
@@ -613,14 +613,14 @@ function renderBrands() {
     return a.client.toLowerCase().localeCompare(b.client.toLowerCase());
   });
 
-  document.getElementById("brand-count").textContent = brands.length + " marque" + (brands.length>1?"s":"");
+  document.getElementById("brand-count").textContent = brands.length + " brand" + (brands.length>1?"s":"");
 
   const arrow = c => brandSort.col === c ? (brandSort.dir === "asc" ? " ↑" : " ↓") : "";
   const cls = c => brandSort.col === c ? "sort" : "";
   const amtLbl = metricMode === "forecast" ? "Forecast €" : "Order €";
 
   let html = '<thead><tr>'+
-    '<th class="'+cls("client")+'" data-sort="client">Marque'+arrow("client")+'</th>'+
+    '<th class="'+cls("client")+'" data-sort="client">Brand'+arrow("client")+'</th>'+
     '<th class="'+cls("rank")+'" data-sort="rank" style="text-align:left">Statut'+arrow("rank")+'</th>'+
     '<th class="'+cls("products")+'" data-sort="products" style="text-align:left">Produit(s)'+arrow("products")+'</th>'+
     '<th class="'+cls("deals")+'" data-sort="deals">Deals'+arrow("deals")+'</th>'+
@@ -660,7 +660,7 @@ function renderAll() { renderUpdatedAt(); renderYear(); renderKPIs(); renderMatr
 
 /* ============== UPDATED-ON TRACKING ============== */
 const UPDATED_KEY = "t8i_updated_at_v1";
-const FR_MONTHS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+const FR_MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
 function getUpdatedDate() {
   try {
@@ -689,8 +689,8 @@ function renderYear() {
 /* ============== SYNTHÈSE BOARD ============== */
 const BRD_FACTS_KEY = "t8i_brd_facts_v1";
 const DEFAULT_FACTS = [
-  { head: "Sourcing Portugal opérationnel", text: "Agent recruté · 4 manufacturers onboardés · samples semelles produits, samples chaussures à suivre." },
-  { head: "Tommy Hilfiger · technique validée", text: "Samples validés sur critères techniques. Validation design en cours." }
+  { head: "Portugal sourcing operational", text: "Agent hired · 4 manufacturers onboarded · sole samples produced, shoe samples to follow." },
+  { head: "Tommy Hilfiger · technically validated", text: "Samples validated on technical criteria. Design validation in progress." }
 ];
 
 const STATUS_PILL_LABEL = {
@@ -737,10 +737,10 @@ function renderBoard() {
   const totVol = activeRows.reduce((s, r) => s + r.volume, 0);
 
   const kpis = [
-    { lbl: "Marques actives", val: activeClients.size, sub: "sur " + allClients.size + " marques travaillées" },
-    { lbl: "Deals actifs", val: activeRows.length, sub: "pipe consolidé" },
-    { lbl: "CA forecast " + year, val: brdFmtEur(totFc), sub: "FY actualisé" },
-    { lbl: "Volume forecast", val: brdFmtTon(totVol), sub: "élastomères post-consumer" }
+    { lbl: "Active brands", val: activeClients.size, sub: "of " + allClients.size + " brands worked" },
+    { lbl: "Active deals", val: activeRows.length, sub: "consolidated pipe" },
+    { lbl: "Revenue forecast " + year, val: brdFmtEur(totFc), sub: "FY updated" },
+    { lbl: "Volume forecast", val: brdFmtTon(totVol), sub: "post-consumer elastomers" }
   ];
   document.getElementById("brd-kpis").innerHTML = kpis.map(k => `
     <div class="brd-kpi">
@@ -775,10 +775,10 @@ function renderBoard() {
         <div class="brd-funnel-lbl">${d.stage}</div>
         <div class="brd-funnel-bar-bg">
           <div class="brd-funnel-bar ${isEmpty ? 'empty' : ''}" style="width:${pct}%; background:${isEmpty ? '#D8D4CC' : color}; color:${isEmpty ? '#6B6862' : fg};">
-            ${d.brands} marque${d.brands > 1 ? 's' : ''}
+            ${d.brands} brand${d.brands > 1 ? 's' : ''}
           </div>
         </div>
-        <div class="brd-funnel-amt ${isEmpty ? 'muted' : ''}">${isEmpty ? 'en construction' : brdFmtEurK(d.amt)}</div>
+        <div class="brd-funnel-amt ${isEmpty ? 'muted' : ''}">${isEmpty ? 'under construction' : brdFmtEurK(d.amt)}</div>
       </div>
     `;
   }).join("");
@@ -800,7 +800,7 @@ function renderBoard() {
     .slice(0, 8);
 
   document.getElementById("brd-top").innerHTML = topDeals.length === 0
-    ? '<p style="font-size:12px;color:#9A968C;text-align:center;padding:20px 0;">Aucun deal avec CA forecast renseigné.</p>'
+    ? '<p style="font-size:12px;color:#9A968C;text-align:center;padding:20px 0;">No deals with revenue forecast.</p>'
     : topDeals.map((b, i) => {
       return `
         <div class="brd-top-row">
@@ -832,7 +832,7 @@ function renderBoard() {
     .filter(([_, v]) => v.amt > 0)
     .sort((a, b) => b[1].amt - a[1].amt);
   document.getElementById("brd-products").innerHTML = productRows.length === 0
-    ? '<p style="font-size:12px;color:#9A968C;text-align:center;padding:20px 0;">Aucun CA forecast à répartir.</p>'
+    ? '<p style="font-size:12px;color:#9A968C;text-align:center;padding:20px 0;">No revenue forecast to break down.</p>'
     : productRows.map(([p, v]) => {
       const pct = totalAmt > 0 ? (v.amt / totalAmt) * 100 : 0;
       const color = PRODUCT_COLORS[p] || "#888";
@@ -906,7 +906,7 @@ document.addEventListener("blur", e => {
 document.addEventListener("click", e => {
   if (e.target.id === "reset-btn") {
     rows = INITIAL.map(r => ({client:r[0], status:r[1], product:r[2], unitPrice:+r[3]||0, volume:+r[4]||0, orderAmount:+r[5]||0, forecast:+r[6]||0}));
-    document.getElementById("upload-info").textContent = "Données initiales rechargées";
+    document.getElementById("upload-info").textContent = "Initial data reloaded";
     document.getElementById("upload-err").textContent = ""; document.getElementById("upload-warn").textContent = "";
     document.getElementById("xlsx-input").value = ""; setUpdatedNow(); renderAll();
   }
@@ -928,7 +928,7 @@ document.addEventListener("click", e => {
     document.getElementById("pane-" + e.target.dataset.pane).classList.add("active");
   }
   if (e.target.id === "brd-fact-add-btn") {
-    brdFacts.push({ head: "Nouveau fait", text: "Détail à compléter." });
+    brdFacts.push({ head: "New highlight", text: "Details to complete." });
     saveFacts(brdFacts);
     renderFacts();
   }
@@ -941,7 +941,7 @@ document.addEventListener("click", e => {
   }
   if (e.target.dataset && e.target.dataset.del !== undefined) {
     const i = +e.target.dataset.del;
-    if (confirm("Supprimer ce fait ?")) {
+    if (confirm("Delete this highlight?")) {
       brdFacts.splice(i, 1);
       saveFacts(brdFacts);
       renderFacts();
